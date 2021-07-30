@@ -1,8 +1,10 @@
-# ansible-role-hosts
+[![forthebadge](https://forthebadge.com/images/badges/made-with-crayons.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/designed-in-etch-a-sketch.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
 
-A role to maintain the ```/etc/hosts``` file. Based on the role
-provided by [Antti Salminen](https://github.com/ajsalminen/ansible-role-hosts)
-but with my own addoptations.
+# jvzantvoort.hosts
+
+A role to maintain the ```/etc/hosts``` file. Based on the role provided by [Antti Salminen](https://github.com/ajsalminen/ansible-role-hosts) but with my own addoptations.
 
 ## Requirements
 

@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: hosts
   author: John van Zantvoort
   description: Maintain the /etc/hosts file
   license: MIT
