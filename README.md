@@ -9,6 +9,7 @@ None
 ## Role Variables
 
 | Name                 | Default            | Description |
+| -------------------- | ------------------ | ----------- |
 | hosts_user           |  ```root```        | User of the file |
 | hosts_group          |  ```root```        | group of the file |
 | hosts_file           |  ```/etc/hosts```  | path of the file |
