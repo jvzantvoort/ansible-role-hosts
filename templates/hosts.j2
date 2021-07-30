@@ -1,0 +1,39 @@
+# {{ ansible_managed }}
+{# -------------------------------------------------------------------------- #}
+{# The following lines are desirable for IPv6 capable hosts                   #}
+{# -------------------------------------------------------------------------- #}
+# default entries
+::1             ip6-localhost ip6-loopback
+::1             localhost localhost.localdomain
+::1             localhost6 localhost6.localdomain6
+fe00::0         ip6-localnet ip6-mcastprefix
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+127.0.0.1       localhost localhost.localdomain
+127.0.0.1       localhost4 localhost4.localdomain4
+
+{# -------------------------------------------------------------------------- #}
+{# Add the ansible inventory definition to the hosts file                     #}
+# Local host entry
+{% if add_inventory_host %}
+{{ "%-15s"|format(ansible_default_ipv4.address) }} {{ inventory_hostname }} {{ inventory_hostname_short }}
+
+{% endif %}
+{# -------------------------------------------------------------------------- #}
+{# add predefined hosts                                                       #}
+{# -------------------------------------------------------------------------- #}
+{% for host_def in hosts_definitions: %}
+{{ "%-15s"|format(host_def.address) }} {{ host_def.hostnames | join(' ') }}
+{% endfor %}
+{# -------------------------------------------------------------------------- #}
+{# optionally add hosts from hostsgroups                                      #}
+{# -------------------------------------------------------------------------- #}
+{% if add_inventory_hosts %}
+# Add hostgroup based lines
+{% for hostgroup in inventory_groups %}
+# hostgroup: {{ hostgroup }}
+{% for host in groups[hostgroup] %}
+{{ "%-15s" | format(hostvars[host].ansible_host,) }} {{ hostvars[host].ansible_fqdn }} {{ hostvars[host].ansible_hostname }} {{ host }}
+{% endfor %}
+{% endfor %}
+{% endif %}

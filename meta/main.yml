@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: John van Zantvoort
+  description: Maintain the /etc/hosts file
+  license: MIT
+  min_ansible_version: 2.7
+  galaxy_tags: []
+
+dependencies: []

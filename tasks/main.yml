@@ -1,0 +1,8 @@
+---
+- name: Configure the /etc/hosts file
+  template:
+    src: "hosts.j2"
+    dest: "{{ hosts_file }}"
+    owner: "{{ hosts_user }}"
+    group: "{{ hosts_group }}"
+    mode: 0644

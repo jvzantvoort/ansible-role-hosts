@@ -1,0 +1,9 @@
+---
+hosts_user: root
+hosts_group: root
+hosts_file: "/etc/hosts"
+
+add_inventory_host: false
+add_inventory_hosts: false
+inventory_groups: []
+hosts_definitions: []
