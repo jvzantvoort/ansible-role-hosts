@@ -1,6 +1,8 @@
 # ansible-role-hosts
 
-A role to maintain the ```/etc/hosts``` file
+A role to maintain the ```/etc/hosts``` file. Based on the role
+provided by [Antti Salminen](https://github.com/ajsalminen/ansible-role-hosts)
+but with my own addoptations.
 
 ## Requirements
 
@@ -24,6 +26,21 @@ None
 
 ## Example Playbook
 
+Simple execution:
+
+    ---
+    - hosts: localhost
+      gather_facts: true
+      tasks:
+        - include_role:
+            name: ansible-role-hosts
+          vars:
+            hosts_definitions:
+              - address: 172.1.1.1
+                hostnames:
+                  - ws.example.com
+                  - ws
+
 Add all hosts in the inventory to the hosts file:
 
     ---
@@ -45,10 +62,10 @@ Add all hosts in the inventory to the hosts file:
               - all
               - some
             hosts_definitions:
-              - address: 192.168.1.105
+              - address: 172.1.1.1
                 hostnames:
-                  - m111
-                  - m0a
+                  - ws.example.com
+                  - ws
 
 ## License
 
